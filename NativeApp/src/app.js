@@ -4,6 +4,7 @@ import {
     View,
     StyleSheet
 } from 'react-native';
+
 import Main from './components/ui/Main';
 
 export default class App extends React.Component {
