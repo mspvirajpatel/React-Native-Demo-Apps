@@ -7,16 +7,16 @@ import {
 	Image,
     Text
 } from 'react-native';
-import BaseStyles from '../../BaseStyles';
 
 export default class UserInput extends Component {
+
+    error() {
+        if (this.props.error) {
+            return <Text>{this.props.error}</Text>
+        }
+        return null
+    }
 	render() {
-        //keyboardWillShow, keyboardDidShow, keyboardWillHide, keyboardDidHide
-//keyboardWillChangeFrame, keyboardDidChangeFrame
-//add the listener
-//         var listener = DeviceEventEmitter.addListener('keyboardWillShow', (e) =>{
-//             console.log('Event is fired!');
-//         });
 		return (
 			<View style={styles.inputWrapper}>
 				<Image source={this.props.source}
@@ -29,9 +29,7 @@ export default class UserInput extends Component {
 					returnKeyType={this.props.returnKeyType}
 					placeholderTextColor='white'
 					underlineColorAndroid='transparent' />
-				<View style={this.props.parentColor}>
-					<Text style={[BaseStyles.text, styles.text]}> this is a long text </Text>
-				</View>
+                {this.error()}
 			</View>
 		);
 	}
@@ -60,7 +58,10 @@ const styles = StyleSheet.create({
 		color: '#ffffff',
 	},
 	inputWrapper: {
-		flex: 1,
+		marginVertical: 5,
+		marginHorizontal: 5,
+		height:40
+
 	},
 	inlineImg: {
 		position: 'absolute',

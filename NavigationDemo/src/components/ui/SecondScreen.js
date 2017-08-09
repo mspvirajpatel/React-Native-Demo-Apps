@@ -5,7 +5,11 @@ import {
 	Image,
 	TouchableOpacity,
 	Animated,
-	Easing
+	Easing,
+    ScrollView,
+    Text,
+    FlatList
+
 } from 'react-native';
 
 import arrowImg from '../../images/left-arrow.png';
@@ -54,6 +58,47 @@ export default class SecondScreen extends Component {
 
 		return (
 			<View style={styles.container}>
+				{/*<ScrollView>*/}
+					{/*<Text style={{fontSize:96}}>Scroll me plz</Text>*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Text style={{fontSize:96}}>If you like</Text>*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Text style={{fontSize:96}}>Scrolling down</Text>*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Text style={{fontSize:96}}>What's the best</Text>*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+					{/*<Image style={styles.image} source={require('../../images/logo.png')} />*/}
+
+				{/*</ScrollView>*/}
+				<FlatList
+					data={[
+                        {key: 'Devin'},
+                        {key: 'Jackson'},
+                        {key: 'James'},
+                        {key: 'Joel'},
+                        {key: 'John'},
+                        {key: 'Jillian'},
+                        {key: 'Jimmy'},
+                        {key: 'Julie'},
+                    ]}
+					renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+				/>
+
 				<TouchableOpacity onPress={this._onPress}
 					style={styles.button}
 					activeOpacity={1}>
@@ -91,5 +136,10 @@ const styles = StyleSheet.create({
 	image: {
 		width: 24,
 		height: 24,
-	}
+	},
+	item: {
+        padding: 10,
+        fontSize: 18,
+        height: 44,
+    },
 });
